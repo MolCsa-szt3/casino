@@ -4,9 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SzenerceVallalat.Desktop.Views"
+             
+             xmlns:vm="clr-namespace:SzenerceVallalat.Desktop.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800" d:Background="Silver">
+    <UserControl.DataContext>
+        <vm:AdministrativeViewModel/>
+    </UserControl.DataContext>
+    <StackPanel Orientation="Horizontal">
+        <ListView ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedUser}"/>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Button Content="Hozzáad" Margin="5px 0" Command="{Binding AddPlayerCommand}"/>
+                    <Button Content="Változtat" Margin="5px 0" Command="{Binding AlterPlayerCommand}"/>
+                </StackPanel>
+                <StackPanel Margin="2px">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Név:" Width="50px"/>
+                        <TextBox Text="{Binding InputName}" Width="100px"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Email:" Width="50px"/>
+                        <TextBox Text="{Binding InputEmail}" Width="100px"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5px">
+                <Button Content="Keretösszeget emel" Command="{Binding AddMoneyCommand}"/>
+                <TextBox Text="{Binding InputAmount}" Width="100px"/>
+                <TextBlock>Ft</TextBlock>
+            </StackPanel>
+            <Button Content="Töröl" Command="{Binding RemovePlayerCommand}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>
