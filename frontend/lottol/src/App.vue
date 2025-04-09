@@ -4,9 +4,13 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <nav>
-      <RouterLink class="btn btn-outline-success" to="/">Lottók</RouterLink>
-      <RouterLink class="btn btn-outline-success" to="/games">Játék</RouterLink>
+    <nav class="row justify-content-center">
+      <RouterLink class="btn btn-outline-success col-2 m-3" to="/"
+        >Lottók</RouterLink
+      >
+      <RouterLink class="btn btn-outline-success col-2 m-3" to="/games"
+        >Játék</RouterLink
+      >
     </nav>
   </header>
 

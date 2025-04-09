@@ -12,14 +12,14 @@ const lotteryStore = useLotteryStore();
           v-for="lotto in lotteryStore.types"
           class="card col-md-6 col-lg-4 col-xl-3"
         >
-          <div class="card-body">
+          <div class="card-body d-grid">
             <h4 class="card-title">{{ lotto }}</h4>
             <img
               class="card-img-top"
               :src="lotteryStore.getPic(lotto)"
               alt="Card image"
             />
-            <p class="card-text">TEsting makes me feel good</p>
+            <p class="card-text">{{ lotteryStore.getDesc(lotto) }}</p>
             <button
               @click="lotteryStore.selectLottery(lotto)"
               class="btn btn-success"
