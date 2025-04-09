@@ -10,11 +10,12 @@ namespace SzenerceVallalat.Console.Repos
 {
     public class UserRepo
     {
-        private PlayersContext _context;
+        
+        private LottodbContext _context;
         
         public UserRepo() 
         {
-            _context = new PlayersContext();
+            _context = new LottodbContext();
         }
         public List<User> GetAllUsers() 
         {
@@ -28,5 +29,6 @@ namespace SzenerceVallalat.Console.Repos
         {
             return _context.Players.Sum(x => x.Money);
         }
+        
     }
 }

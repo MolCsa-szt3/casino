@@ -1,0 +1,6 @@
+@SzerenceVallalat.Backend_HostAddress = http://localhost:5167
+
+GET {{SzerenceVallalat.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
